@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
+
+Route::resource('category', 'CategoryController', ['only' => [
+    'show'
+]]);
+
+Route::resource('item', 'ItemController', ['except' => [
+    'index', 'create'
+]]);

@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAEA;EACE,iBAAgB,EACjB","file":"app.css","sourcesContent":["@charset 'utf-8';\n\nbody {\n  background:#eee;\n}\n\n"],"sourceRoot":"/source/"}
