@@ -1,10 +1,21 @@
 ///  Colors
-$color-primary: #d60080; //pink
-$color-secondary: darken($color-primary, 25%);
-$color-highlight: #4a9800; //lime-green
-$color-highlight-darker: #0cb200; //darker-green
-$color-white: #f1f1f1; //white
-$color-muted: #838383;
+$color-wordpress: #5384ee;
+$color-wordpress-primary: #4168bb;
+$color-wordpress-secondary: #273d6e;
+
+$color-prestashop: #55a05a;
+$color-prestashop-primary: #3a6d3d;
+$color-prestashop-secondary: #2c532f;
+
+$color-joomla: #d8a62b;
+$color-joomla-primary: #a57f21;
+$color-joomla-secondary: #584412;
+
+$color-magento: #d34f3d;
+$color-magento-primary: #a03c2e;
+$color-magento-secondary: #531f18;
+
+$color-white: #fff;
 
 /// fonts
 $roboto: 'Roboto', sans-serif;
@@ -16,11 +27,12 @@ $breakpoints: (
   'small': (min-width: 480px),
   'medium': (min-width: 768px),
   'large': (min-width: 992px),
-  'x-large': (min-width: 1200px)
+  'x-large': (min-width: 1200px),
+  'huge': (min-width: 1680px)
 );
 
 /// Project Directories
 $img-dir: '../img/';
 
 // Others
-
+$grid-gutter: 30px;

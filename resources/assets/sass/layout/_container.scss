@@ -1,0 +1,10 @@
+.container {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 25px;
+
+  @include respond-to('medium') {
+    padding: 0 35px;
+  }
+}

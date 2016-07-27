@@ -1,4 +1,182 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 90%; }
+  @media (min-width: 768px) {
+    html {
+      font-size: 95%; } }
+  @media (min-width: 992px) {
+    html {
+      font-size: 100%; } }
+
 body {
-  background: #eee; }
+  font-size: 16px;
+  font-size: 1rem;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.2;
+  overflow-x: hidden; }
+  @media (min-width: 992px) {
+    body {
+      text-rendering: optimizeLegibility; } }
+
+h1,
+h2 {
+  font-weight: 500; }
+
+a {
+  text-decoration: none; }
+
+.container {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 25px; }
+  @media (min-width: 768px) {
+    .container {
+      padding: 0 35px; } }
+
+.grid {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+  margin-left: -30px; }
+
+.header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 35px 0 80px; }
+
+.grid-item {
+  position: relative;
+  width: calc(100% - 30px);
+  margin-left: 30px;
+  padding: 0 10px;
+  border-bottom: 1px solid transparent;
+  cursor: move;
+  cursor: grab;
+  cursor: -webkit-grab; }
+  @media (min-width: 768px) {
+    .grid-item {
+      width: calc(50% - 30px); } }
+  @media (min-width: 992px) {
+    .grid-item {
+      width: calc(33.3333% - 30px); } }
+  @media (min-width: 1200px) {
+    .grid-item {
+      width: calc(25% - 30px); } }
+  .grid-item::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity .25s;
+    background: rgba(255, 255, 255, 0.045);
+    content: '';
+    opacity: 0;
+    z-index: -1; }
+  .grid-item:hover::before, .grid-item:focus::before {
+    opacity: 1; }
+
+.grid-item__btns {
+  margin: 10px 0 20px;
+  text-align: right;
+  list-style-type: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.grid-item__btn {
+  display: inline-block;
+  transition: opacity .2s;
+  opacity: .5; }
+  .grid-item__btn:last-child a {
+    padding-right: 0; }
+  .grid-item__btn:hover, .grid-item__btn:focus {
+    opacity: 1; }
+  .grid-item__btn a {
+    display: inline-block;
+    padding: 0 8px; }
+
+.grid-item__title {
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin: 30px 0 10px; }
+
+.grid-item__link {
+  font-size: 14px;
+  font-size: 0.875rem;
+  display: inline-block;
+  padding: 10px 0; }
+  .grid-item__link:hover, .grid-item__link:focus {
+    text-decoration: underline; }
+
+.grid-item__desc {
+  min-height: 100px;
+  margin: 10px 0 40px; }
+
+.grid-item--add {
+  transition: background-color .3s;
+  background: rgba(255, 255, 255, 0.25); }
+  .grid-item--add:hover, .grid-item--add:focus {
+    background: rgba(255, 255, 255, 0.35); }
+    .grid-item--add:hover .grid-add-item svg, .grid-item--add:focus .grid-add-item svg {
+      fill: rgba(255, 255, 255, 0.95); }
+
+.grid-add-item {
+  padding: 125px 0;
+  text-align: center;
+  cursor: pointer; }
+  .grid-add-item svg {
+    transition: fill .3s;
+    fill: rgba(255, 255, 255, 0.65); }
+
+.page-title {
+  position: absolute;
+  top: 50%;
+  right: -.35em;
+  transform: translate3d(50%, -50%, 0) rotate(-90deg);
+  transform-origin: center bottom;
+  font-size: 250px;
+  opacity: .05;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none; }
+  @media (min-width: 1200px) {
+    .page-title {
+      opacity: .07; } }
+
+.page--wordpress {
+  background: #5384ee; }
+  .page--wordpress .page-title {
+    font-size: 288px; }
+  .page--wordpress .grid-item {
+    border-top: 1px solid #4168bb; }
+    @media (min-width: 768px) {
+      .page--wordpress .grid-item:nth-last-child(-n+2) {
+        border-bottom: 1px solid #4168bb; } }
+    @media (min-width: 992px) {
+      .page--wordpress .grid-item:nth-last-child(-n+3) {
+        border-bottom: 1px solid #4168bb; } }
+    @media (min-width: 1200px) {
+      .page--wordpress .grid-item:nth-last-child(-n+4) {
+        border-bottom: 1px solid #4168bb; } }
+    .page--wordpress .grid-item:last-child {
+      border-bottom: 1px solid #4168bb; }
+  .page--wordpress .grid-item__link {
+    color: #273d6e; }
 
 /*# sourceMappingURL=app.css.map */

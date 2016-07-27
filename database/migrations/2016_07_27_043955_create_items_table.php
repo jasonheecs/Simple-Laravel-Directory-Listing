@@ -23,6 +23,10 @@ class CreateItemsTable extends Migration
 
             $table->text('description');
 
+            $table->integer('order')
+                    ->unsigned()
+                    ->default(0);
+
             $table->smallInteger('version')
                     ->unsigned()
                     ->default(0)

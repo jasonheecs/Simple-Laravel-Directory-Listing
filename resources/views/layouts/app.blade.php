@@ -17,7 +17,9 @@
 </head>
 <body id="js-app" class="@yield('page-class')">
 
-    @yield('content')
+    <div class="container">
+        @yield('content')
+    </div>
 
     <!-- JavaScripts -->
     <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>

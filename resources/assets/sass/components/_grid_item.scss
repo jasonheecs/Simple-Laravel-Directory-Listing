@@ -1,0 +1,146 @@
+// Generates the border-bottom styles for the grid items in the last row
+// Uses the :nth-last-child pseudo selector to cater for responsiveness
+@mixin grid-item-last-row-borders($color) {
+  @include respond-to('medium') {
+    &:nth-last-child(-n+2) {
+      border-bottom: 1px solid $color;
+    }
+  }
+
+  @include respond-to('large') {
+    &:nth-last-child(-n+3) {
+      border-bottom: 1px solid $color;
+    }
+  }
+
+  @include respond-to('x-large') {
+    &:nth-last-child(-n+4) {
+      border-bottom: 1px solid $color;
+    }
+  }
+
+  &:last-child {
+    border-bottom: 1px solid $color;
+  }
+}
+
+.grid-item {
+  position: relative;
+  width: calc(100% - #{$grid-gutter});
+  margin-left: $grid-gutter;
+  padding: 0 10px;
+  border-bottom: 1px solid transparent;
+  // scss-lint:disable DuplicateProperty,VendorPrefix
+  cursor: move; // fallback
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+
+  @include respond-to('medium') {
+    width: calc(50% - #{$grid-gutter});
+  }
+
+  @include respond-to('large') {
+    width: calc(33.3333% - #{$grid-gutter});
+  }
+
+  @include respond-to('x-large') {
+    width: calc(25% - #{$grid-gutter});
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity .25s;
+    background: rgba($color-white, .045);
+    content: '';
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      opacity: 1;
+    }
+    // background: rgba($color-white, .1);
+  }
+}
+
+.grid-item__btns {
+  margin: 10px 0 20px;
+  text-align: right;
+  list-style-type: none;
+  user-select: none;
+}
+
+.grid-item__btn {
+  display: inline-block;
+  transition: opacity .2s;
+  opacity: .5;
+
+  &:last-child {
+    a {
+      padding-right: 0;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  a {
+    display: inline-block;
+    padding: 0 8px;
+  }
+}
+
+.grid-item__title {
+  @include font-size(20px);
+  margin: 30px 0 10px;
+}
+
+.grid-item__link {
+  @include font-size(14px);
+  display: inline-block;
+  padding: 10px 0;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.grid-item__desc {
+  min-height: 100px;
+  margin: 10px 0 40px;
+}
+
+.grid-item--add {
+  transition: background-color .3s;
+  background: rgba($color-white, .25);
+
+  &:hover,
+  &:focus {
+    background: rgba($color-white, .35);
+
+    .grid-add-item svg {
+      fill: rgba($color-white, .95);
+    }
+  }
+}
+
+.grid-add-item {
+  padding: 125px 0;
+  text-align: center;
+  cursor: pointer;
+
+  svg {
+    transition: fill .3s;
+    fill: rgba($color-white, .65);
+  }
+}

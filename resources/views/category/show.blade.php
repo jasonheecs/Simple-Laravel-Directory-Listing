@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
-@section('page-class', str_replace(' ', '-', trim(strtolower($category->name))))
+@section('page-class', 'page--' . str_replace(' ', '-', trim(strtolower($category->name))))
 
 @section('content')
-    <header>
+    <h1 class="page-title">{{ $category->name }}</h1>
+
+    <header class="header">
         <div class="logo">
             <img src="{{ url($category->logo_url) }}" width="200" height="45" />
         </div>
@@ -24,10 +26,27 @@
     <main class="grid">
         @foreach ($category->items as $item)
             <div class="grid-item">
+                <ul class="grid-item__btns">
+                    <li class="grid-item__btn grid-item__btn--edit">
+                        <a href="javascript:void(0)" class="js-edit-item" title="Edit this item">
+                            @include('svg.edit')
+                        </a>
+                    </li>
+                    <li class="grid-item__btn grid-item__btn--delete">
+                        <a href="javascript:void(0)" class="js-delete-item" title="Delete this item">
+                            @include('svg.delete')
+                        </a>
+                    </li>
+                </ul>
                 <h2 class="grid-item__title">{{  $item->name }}</h2>
-                <a href="grid-item__link">{{ $item->link }}</a>
+                <a class="grid-item__link" href="{{ $item->link }}" target="_blank">{{ $item->link }}</a>
                 <p class="grid-item__desc">{{ $item->description }}</p>
             </div>
         @endforeach
+            <div id="add-grid-item" class="grid-item grid-item--add">
+                <div class="grid-add-item">
+                    @include('svg.plus')
+                </div>
+            </div>
     </main>
 @stop

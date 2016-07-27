@@ -1,0 +1,16 @@
+.page--wordpress {
+  background: $color-wordpress;
+
+  .page-title {
+    font-size: 288px;
+  }
+
+  .grid-item {
+    @include grid-item-last-row-borders($color-wordpress-primary);
+    border-top: 1px solid $color-wordpress-primary;
+  }
+
+  .grid-item__link {
+    color: $color-wordpress-secondary;
+  }
+}

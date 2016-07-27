@@ -14,7 +14,13 @@ class ItemsTableSeeder extends Seeder
         factory(App\Category::class, 4)
             ->create()
             ->each(function($category) {
-                $category->items()->saveMany(factory(App\Item::class, 12)->make());
+                $category->items()->saveMany(
+                    factory(App\Item::class, 12)
+                    ->make()
+                    ->each(function($item, $order) {
+                        $item->order = $order + 1;
+                    })
+                );
             });
     }
 }

@@ -1,0 +1,15 @@
+.page-title {
+  position: absolute;
+  top: 50%;
+  right: -.35em;
+  transform: translate3d(50%, -50%, 0) rotate(-90deg);
+  transform-origin: center bottom;
+  font-size: 250px;
+  opacity: .05;
+  user-select: none;
+  pointer-events: none;
+
+  @include respond-to('x-large') {
+    opacity: .07;
+  }
+}

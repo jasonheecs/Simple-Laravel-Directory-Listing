@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->string('name')->comment('Name of the directory category');
             $table->string('logo_url')->comment('URL of the category logo image file');
             $table->string('icon_url')->comment('URL of the category icon image file');
+            $table->string('slug');
             $table->timestamps();
         });
     }

@@ -13,3 +13,26 @@ html {
     font-size: 100%;
   }
 }
+
+body {
+  @include font-size(16px);
+  color: $color-white;
+  font-family: $roboto;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.2;
+  overflow-x: hidden;
+
+  @include respond-to('large') {
+    text-rendering: optimizeLegibility;
+  }
+}
+
+h1,
+h2 {
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
