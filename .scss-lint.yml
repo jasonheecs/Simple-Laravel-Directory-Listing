@@ -1,0 +1,34 @@
+---
+exclude: 'src/scss/vendors/**'
+
+linters:
+  ColorKeyword:
+    enabled: true
+  ColorVariable:
+    enabled: true
+  EmptyRule:
+    enabled: true
+  FinalNewline:
+    enabled: true
+  IdSelector:
+    enabled: false
+  ImportPath:
+    enabled: true
+  Indentation:
+    enabled: false
+  LeadingZero:
+    enabled: true
+  PropertySortOrder:
+    order: smacss
+  SpaceAfterComma:
+    enabled: true
+  SelectorDepth:
+    enabled: false
+  SelectorFormat:
+    convention: hyphenated_BEM
+  StringQuotes:
+    enabled: true
+  TrailingSemicolon:
+    enabled: true
+  UnnecessaryMantissa:
+    enabled: true

@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 90%;
+
+  @include respond-to('medium') {
+    font-size: 95%;
+  }
+
+  @include respond-to('large') {
+    font-size: 100%;
+  }
+}

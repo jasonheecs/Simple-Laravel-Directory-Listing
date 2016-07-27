@@ -1,0 +1,64 @@
+@function calculate-rem($size) {
+  $rem-size: $size / $base-font-size;
+  @return $rem-size * 1rem;
+}
+
+///  Set a rem font size with pixel fallback
+///  Usage: @include font-size(14px)
+@mixin font-size($size) {
+  // scss-lint:disable DuplicateProperty
+  font-size: $size;
+  font-size: calculate-rem($size);
+}
+
+/// Slightly lighten a color
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  //scss-lint:disable ColorKeyword, ColorVariable
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  //scss-lint:disable ColorKeyword, ColorVariable
+  @return mix(black, $color, $percentage);
+}
+
+/// Responsive breakpoint manager
+/// Usage example:
+/// @include respond-to('medium') {
+///   width: 200px;
+/// }
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+      type-of($raw-query) == 'string',
+      unquote($raw-query),
+      inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+/// Generate a box shadow color for the input field focus effect
+/// @param {String} $input-color - Color to generate from
+/// @return {Color}
+@function generate-input-shadow-color($input-color) {
+  @return lighten(saturate(adjust-hue($input-color, -.2273), 23.6585), 14.9020)
+}
+
