@@ -1,0 +1,92 @@
+@mixin placeholder-styles() {
+  //scss-lint:disable VendorPrefix,PseudoElement
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+.input {
+  position: relative;
+  margin: 1.7em .8em;
+}
+
+.input__field {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: .6em;
+  border: 0;
+  background: none;
+  color: $color-white;
+
+  @include placeholder-styles() {
+    opacity: 0;
+  }
+
+  &:focus {
+    @include placeholder-styles() {
+      opacity: .55;
+    }
+
+    ~ .input__label .input__svg {
+      stroke-dashoffset: 0;
+    }
+
+    ~ .input__label .input__label-content {
+      transform: scale3d(.8, .8, 1) translate3d(0, -2.4em, 0);
+    }
+  }
+}
+
+.input__label {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 .6em;
+  cursor: text;
+}
+
+.input__field--textarea {
+  height: 300px;
+}
+
+.input__svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale3d(1, -1, 1);
+  transition: stroke-dashoffset .35s;
+  fill: none;
+  pointer-events: none;
+  stroke-width: 3px;
+  stroke-dasharray: 962;
+  stroke-dashoffset: 558;
+}
+
+.input__label-content {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: .6em 0;
+  transform-origin: left center;
+  transition: transform .3s;
+}
+
+.form {
+  margin-top: 25px;
+}
+

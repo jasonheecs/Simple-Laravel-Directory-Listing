@@ -36,3 +36,9 @@ h2 {
 a {
   text-decoration: none;
 }
+
+textarea:focus,
+input:focus,
+label:focus {
+    outline: none;
+}

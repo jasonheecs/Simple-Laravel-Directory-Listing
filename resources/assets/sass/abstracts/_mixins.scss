@@ -74,7 +74,12 @@
     border-top: 1px solid $color-primary;
   }
 
-  .grid-item__link {
+  .grid-item__link,
+  .input__label {
     color: $color-secondary;
+  }
+
+  .input__svg {
+    stroke: $color-secondary;
   }
 }

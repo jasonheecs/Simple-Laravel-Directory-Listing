@@ -30,6 +30,11 @@ h2 {
 a {
   text-decoration: none; }
 
+textarea:focus,
+input:focus,
+label:focus {
+  outline: none; }
+
 .container {
   position: relative;
   margin-right: auto;
@@ -55,6 +60,74 @@ a {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin: 35px 0 80px; }
+
+.input {
+  position: relative;
+  margin: 1.7em .8em; }
+
+.input__field {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: .6em;
+  border: 0;
+  background: none;
+  color: #fff; }
+  .input__field::-webkit-input-placeholder {
+    opacity: 0; }
+  .input__field:-moz-placeholder {
+    opacity: 0; }
+  .input__field::-moz-placeholder {
+    opacity: 0; }
+  .input__field:-ms-input-placeholder {
+    opacity: 0; }
+  .input__field:focus::-webkit-input-placeholder {
+    opacity: .55; }
+  .input__field:focus:-moz-placeholder {
+    opacity: .55; }
+  .input__field:focus::-moz-placeholder {
+    opacity: .55; }
+  .input__field:focus:-ms-input-placeholder {
+    opacity: .55; }
+  .input__field:focus ~ .input__label .input__svg {
+    stroke-dashoffset: 0; }
+  .input__field:focus ~ .input__label .input__label-content {
+    transform: scale3d(0.8, 0.8, 1) translate3d(0, -2.4em, 0); }
+
+.input__label {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 .6em;
+  cursor: text; }
+
+.input__field--textarea {
+  height: 300px; }
+
+.input__svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale3d(1, -1, 1);
+  transition: stroke-dashoffset .35s;
+  fill: none;
+  pointer-events: none;
+  stroke-width: 3px;
+  stroke-dasharray: 962;
+  stroke-dashoffset: 558; }
+
+.input__label-content {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: .6em 0;
+  transform-origin: left center;
+  transition: transform .3s; }
+
+.form {
+  margin-top: 25px; }
 
 .grid-item {
   position: relative;
@@ -115,6 +188,9 @@ a {
   font-size: 20px;
   font-size: 1.25rem;
   margin: 30px 0 10px; }
+
+.grid-item__title--add {
+  margin-top: 45px; }
 
 .grid-item__link {
   font-size: 14px;
@@ -200,8 +276,11 @@ a {
         border-bottom: 1px solid #4168bb; } }
     .page--wordpress .grid-item:last-child {
       border-bottom: 1px solid #4168bb; }
-  .page--wordpress .grid-item__link {
+  .page--wordpress .grid-item__link,
+  .page--wordpress .input__label {
     color: #273d6e; }
+  .page--wordpress .input__svg {
+    stroke: #273d6e; }
   .page--wordpress .page-title {
     font-size: 288px; }
 
@@ -222,8 +301,11 @@ a {
         border-bottom: 1px solid #3a6d3d; } }
     .page--prestashop .grid-item:last-child {
       border-bottom: 1px solid #3a6d3d; }
-  .page--prestashop .grid-item__link {
+  .page--prestashop .grid-item__link,
+  .page--prestashop .input__label {
     color: #2c532f; }
+  .page--prestashop .input__svg {
+    stroke: #2c532f; }
   .page--prestashop .page-title {
     font-size: 266px; }
 
@@ -244,8 +326,11 @@ a {
         border-bottom: 1px solid #a57f21; } }
     .page--joomla .grid-item:last-child {
       border-bottom: 1px solid #a57f21; }
-  .page--joomla .grid-item__link {
+  .page--joomla .grid-item__link,
+  .page--joomla .input__label {
     color: #584412; }
+  .page--joomla .input__svg {
+    stroke: #584412; }
   .page--joomla .page-title {
     font-size: 360px; }
 
@@ -266,8 +351,11 @@ a {
         border-bottom: 1px solid #a03c2e; } }
     .page--magento .grid-item:last-child {
       border-bottom: 1px solid #a03c2e; }
-  .page--magento .grid-item__link {
+  .page--magento .grid-item__link,
+  .page--magento .input__label {
     color: #531f18; }
+  .page--magento .input__svg {
+    stroke: #531f18; }
   .page--magento .page-title {
     font-size: 328px; }
 

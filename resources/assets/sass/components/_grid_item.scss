@@ -108,6 +108,10 @@
   margin: 30px 0 10px;
 }
 
+.grid-item__title--add {
+  margin-top: 45px;
+}
+
 .grid-item__link {
   @include font-size(14px);
   display: inline-block;
