@@ -49,4 +49,6 @@
                 </div>
             </div>
     </main>
+
+    @include('category.create')
 @stop
