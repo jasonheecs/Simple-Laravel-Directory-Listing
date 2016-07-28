@@ -1,0 +1,7 @@
+.page--joomla {
+  @include generate-page-specific-styles($color-joomla, $color-joomla-primary, $color-joomla-secondary);
+
+  .page-title {
+    font-size: 360px;
+  }
+}

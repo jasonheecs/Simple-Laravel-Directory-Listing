@@ -15,7 +15,9 @@
                 @foreach (App\Category::all() as $categoryItem)
                     @if ($categoryItem->id != $category->id)
                         <li class="nav__item">
-                            <a href="{{ url('/category', $categoryItem->id) }}">{{ $categoryItem->icon_url }}</a>
+                            <a href="{{ url('/category', $categoryItem->id) }}">
+                                <img src="{{ url($categoryItem->icon_url) }}" />
+                            </a>
                         </li>
                     @endif
                 @endforeach

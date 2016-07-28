@@ -1,0 +1,7 @@
+.page--magento {
+  @include generate-page-specific-styles($color-magento, $color-magento-primary, $color-magento-secondary);
+
+  .page-title {
+    font-size: 328px;
+  }
+}

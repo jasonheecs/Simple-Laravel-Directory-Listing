@@ -19,8 +19,12 @@
 'components/button',
 'components/form',
 'components/grid_item',
+'components/nav',
 'components/page_title';
 
 @import
 'pages/login',
-'pages/wordpress';
+'pages/wordpress',
+'pages/prestashop',
+'pages/joomla',
+'pages/magento';

@@ -59,6 +59,22 @@
 /// @param {String} $input-color - Color to generate from
 /// @return {Color}
 @function generate-input-shadow-color($input-color) {
-  @return lighten(saturate(adjust-hue($input-color, -.2273), 23.6585), 14.9020)
+  @return lighten(saturate(adjust-hue($input-color, -.2273), 23.6585), 14.9020);
 }
 
+@mixin generate-page-specific-styles($color, $color-primary, $color-secondary) {
+  background: $color;
+
+  .nav__item::before {
+    background: rgba($color, .4);
+  }
+
+  .grid-item {
+    @include grid-item-last-row-borders($color-primary);
+    border-top: 1px solid $color-primary;
+  }
+
+  .grid-item__link {
+    color: $color-secondary;
+  }
+}

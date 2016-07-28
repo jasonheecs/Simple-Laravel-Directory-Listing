@@ -1,0 +1,7 @@
+.page--prestashop {
+  @include generate-page-specific-styles($color-prestashop, $color-prestashop-primary, $color-prestashop-secondary);
+
+  .page-title {
+    font-size: 266px;
+  }
+}

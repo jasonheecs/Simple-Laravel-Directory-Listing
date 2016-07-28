@@ -144,6 +144,28 @@ a {
     transition: fill .3s;
     fill: rgba(255, 255, 255, 0.65); }
 
+.nav {
+  list-style-type: none; }
+
+.nav__item {
+  display: inline-block;
+  position: relative;
+  margin-right: 25px; }
+  @media (min-width: 992px) {
+    .nav__item {
+      margin-right: 35px; } }
+  .nav__item:last-child {
+    margin-right: 0; }
+  .nav__item::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    pointer-events: none;
+    mix-blend-mode: color; }
+
 .page-title {
   position: absolute;
   top: 50%;
@@ -163,8 +185,8 @@ a {
 
 .page--wordpress {
   background: #5384ee; }
-  .page--wordpress .page-title {
-    font-size: 288px; }
+  .page--wordpress .nav__item::before {
+    background: rgba(83, 132, 238, 0.4); }
   .page--wordpress .grid-item {
     border-top: 1px solid #4168bb; }
     @media (min-width: 768px) {
@@ -180,5 +202,73 @@ a {
       border-bottom: 1px solid #4168bb; }
   .page--wordpress .grid-item__link {
     color: #273d6e; }
+  .page--wordpress .page-title {
+    font-size: 288px; }
+
+.page--prestashop {
+  background: #55a05a; }
+  .page--prestashop .nav__item::before {
+    background: rgba(85, 160, 90, 0.4); }
+  .page--prestashop .grid-item {
+    border-top: 1px solid #3a6d3d; }
+    @media (min-width: 768px) {
+      .page--prestashop .grid-item:nth-last-child(-n+2) {
+        border-bottom: 1px solid #3a6d3d; } }
+    @media (min-width: 992px) {
+      .page--prestashop .grid-item:nth-last-child(-n+3) {
+        border-bottom: 1px solid #3a6d3d; } }
+    @media (min-width: 1200px) {
+      .page--prestashop .grid-item:nth-last-child(-n+4) {
+        border-bottom: 1px solid #3a6d3d; } }
+    .page--prestashop .grid-item:last-child {
+      border-bottom: 1px solid #3a6d3d; }
+  .page--prestashop .grid-item__link {
+    color: #2c532f; }
+  .page--prestashop .page-title {
+    font-size: 266px; }
+
+.page--joomla {
+  background: #d8a62b; }
+  .page--joomla .nav__item::before {
+    background: rgba(216, 166, 43, 0.4); }
+  .page--joomla .grid-item {
+    border-top: 1px solid #a57f21; }
+    @media (min-width: 768px) {
+      .page--joomla .grid-item:nth-last-child(-n+2) {
+        border-bottom: 1px solid #a57f21; } }
+    @media (min-width: 992px) {
+      .page--joomla .grid-item:nth-last-child(-n+3) {
+        border-bottom: 1px solid #a57f21; } }
+    @media (min-width: 1200px) {
+      .page--joomla .grid-item:nth-last-child(-n+4) {
+        border-bottom: 1px solid #a57f21; } }
+    .page--joomla .grid-item:last-child {
+      border-bottom: 1px solid #a57f21; }
+  .page--joomla .grid-item__link {
+    color: #584412; }
+  .page--joomla .page-title {
+    font-size: 360px; }
+
+.page--magento {
+  background: #d34f3d; }
+  .page--magento .nav__item::before {
+    background: rgba(211, 79, 61, 0.4); }
+  .page--magento .grid-item {
+    border-top: 1px solid #a03c2e; }
+    @media (min-width: 768px) {
+      .page--magento .grid-item:nth-last-child(-n+2) {
+        border-bottom: 1px solid #a03c2e; } }
+    @media (min-width: 992px) {
+      .page--magento .grid-item:nth-last-child(-n+3) {
+        border-bottom: 1px solid #a03c2e; } }
+    @media (min-width: 1200px) {
+      .page--magento .grid-item:nth-last-child(-n+4) {
+        border-bottom: 1px solid #a03c2e; } }
+    .page--magento .grid-item:last-child {
+      border-bottom: 1px solid #a03c2e; }
+  .page--magento .grid-item__link {
+    color: #531f18; }
+  .page--magento .page-title {
+    font-size: 328px; }
 
 /*# sourceMappingURL=app.css.map */
