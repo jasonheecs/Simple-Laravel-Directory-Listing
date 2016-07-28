@@ -2,8 +2,9 @@
 <script type="text/template" id="create-item-template">
     <form>
         <input type="text" name="name" />
-        <input type="url" name="url" />
-        <textarea></textarea>
+        <input type="url" name="url" value="http://"/>
+        <textarea name="description"></textarea>
         <button type="submit">Save</button>
+        <input type="hidden" name="categoryId" value="{{ $category->id }}">
     </form>
 </script>

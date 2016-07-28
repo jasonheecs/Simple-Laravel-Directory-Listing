@@ -23,32 +23,20 @@
         </nav>
     </header>
 
-    <main class="grid">
+    <main id="js-grid" class="grid">
         @foreach ($category->items as $item)
-            <div class="grid-item">
-                <ul class="grid-item__btns">
-                    <li class="grid-item__btn grid-item__btn--edit">
-                        <a href="javascript:void(0)" class="js-edit-item" title="Edit this item">
-                            @include('svg.edit')
-                        </a>
-                    </li>
-                    <li class="grid-item__btn grid-item__btn--delete">
-                        <a href="javascript:void(0)" class="js-delete-item" title="Delete this item">
-                            @include('svg.delete')
-                        </a>
-                    </li>
-                </ul>
-                <h2 class="grid-item__title">{{  $item->name }}</h2>
-                <a class="grid-item__link" href="{{ $item->link }}" target="_blank">{{ $item->link }}</a>
-                <p class="grid-item__desc">{{ $item->description }}</p>
-            </div>
+           @include('item.show')
         @endforeach
             <div id="add-grid-item" class="grid-item grid-item--add">
-                <div class="grid-add-item">
-                    @include('svg.plus')
-                </div>
+                @include('item.add')
             </div>
     </main>
 
-    @include('category.create')
+    @include('item.create')
+    <script type="text/template" id="show-item-template">
+        @include('item.show', ['jsTemplate' => true])
+    </script>
+    <script type="text/template" id="add-item-template">
+        @include('item.add')
+    </script>
 @stop

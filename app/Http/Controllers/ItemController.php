@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Item;
+use App\Category;
 
 class ItemController extends Controller
 {
@@ -36,7 +38,22 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'url' => 'required|url',
+            'description' => 'required'
+        ]);
+
+        $item = new Item();
+        $item->name = $request->name;
+        $item->link = $request->url;
+        $item->description = $request->description;
+
+        $category = Category::findOrFail($request->categoryId);
+        $item->order = $category->getLastItemOrder() + 1;
+        $category->addItem($item);
+
+        return response()->json(['response' => 'Item Added']);
     }
 
     /**

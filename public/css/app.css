@@ -108,6 +108,8 @@ a {
   .grid-item__btn a {
     display: inline-block;
     padding: 0 8px; }
+  .grid-item__btn svg {
+    pointer-events: none; }
 
 .grid-item__title {
   font-size: 20px;
