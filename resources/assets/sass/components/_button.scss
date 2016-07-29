@@ -1,0 +1,19 @@
+.btn {
+  display: inline-block;
+  position: relative;
+  padding: 20px 40px;
+  border: 0;
+  outline: none;
+  background: none;
+  color: $color-white;
+  font-weight: bold;
+  letter-spacing: .08em;
+  text-shadow: 0 0 2px $color-black;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn--default {
+  @include font-size(15px);
+  padding: 15px 25px;
+}

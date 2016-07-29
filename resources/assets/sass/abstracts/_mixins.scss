@@ -82,4 +82,20 @@
   .input__svg {
     stroke: $color-secondary;
   }
+
+  .btn--default {
+    background: shade($color-primary, 25%);
+  }
+
+  .input__field--textarea {
+    border-color: $color-secondary;
+  }
+
+  // autocomplete input field background on Chrome
+  // http://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete
+  input:-webkit-autofill {
+    //scss-lint:disable VendorPrefix
+    -webkit-box-shadow: 0 0 0 1000px $color-primary inset;
+  }
+
 }

@@ -19,7 +19,7 @@
 
 .input {
   position: relative;
-  margin: 1.7em .8em;
+  margin: 1.7em 0;
 }
 
 .input__field {
@@ -58,10 +58,14 @@
   height: 100%;
   padding: 0 .6em;
   cursor: text;
+  z-index: -1;
 }
 
 .input__field--textarea {
   height: 300px;
+  border: 1px solid transparent;
+  overflow-y: scroll;
+  resize: none;
 }
 
 .input__svg {
@@ -87,6 +91,6 @@
 }
 
 .form {
-  margin-top: 25px;
+  margin: 25px .8em;
 }
 

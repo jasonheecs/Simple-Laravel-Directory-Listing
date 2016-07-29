@@ -61,9 +61,28 @@ label:focus {
   justify-content: space-between;
   margin: 35px 0 80px; }
 
+.btn {
+  display: inline-block;
+  position: relative;
+  padding: 20px 40px;
+  border: 0;
+  outline: none;
+  background: none;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: .08em;
+  text-shadow: 0 0 2px #000;
+  text-transform: uppercase;
+  cursor: pointer; }
+
+.btn--default {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  padding: 15px 25px; }
+
 .input {
   position: relative;
-  margin: 1.7em .8em; }
+  margin: 1.7em 0; }
 
 .input__field {
   display: block;
@@ -101,10 +120,14 @@ label:focus {
   width: 100%;
   height: 100%;
   padding: 0 .6em;
-  cursor: text; }
+  cursor: text;
+  z-index: -1; }
 
 .input__field--textarea {
-  height: 300px; }
+  height: 300px;
+  border: 1px solid transparent;
+  overflow-y: scroll;
+  resize: none; }
 
 .input__svg {
   position: absolute;
@@ -127,7 +150,7 @@ label:focus {
   transition: transform .3s; }
 
 .form {
-  margin-top: 25px; }
+  margin: 25px .8em; }
 
 .grid-item {
   position: relative;
@@ -281,6 +304,12 @@ label:focus {
     color: #273d6e; }
   .page--wordpress .input__svg {
     stroke: #273d6e; }
+  .page--wordpress .btn--default {
+    background: #314e8c; }
+  .page--wordpress .input__field--textarea {
+    border-color: #273d6e; }
+  .page--wordpress input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #4168bb inset; }
   .page--wordpress .page-title {
     font-size: 288px; }
 
@@ -306,6 +335,12 @@ label:focus {
     color: #2c532f; }
   .page--prestashop .input__svg {
     stroke: #2c532f; }
+  .page--prestashop .btn--default {
+    background: #2c522e; }
+  .page--prestashop .input__field--textarea {
+    border-color: #2c532f; }
+  .page--prestashop input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #3a6d3d inset; }
   .page--prestashop .page-title {
     font-size: 266px; }
 
@@ -331,6 +366,12 @@ label:focus {
     color: #584412; }
   .page--joomla .input__svg {
     stroke: #584412; }
+  .page--joomla .btn--default {
+    background: #7c5f19; }
+  .page--joomla .input__field--textarea {
+    border-color: #584412; }
+  .page--joomla input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #a57f21 inset; }
   .page--joomla .page-title {
     font-size: 360px; }
 
@@ -356,6 +397,12 @@ label:focus {
     color: #531f18; }
   .page--magento .input__svg {
     stroke: #531f18; }
+  .page--magento .btn--default {
+    background: #782d23; }
+  .page--magento .input__field--textarea {
+    border-color: #531f18; }
+  .page--magento input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #a03c2e inset; }
   .page--magento .page-title {
     font-size: 328px; }
 
