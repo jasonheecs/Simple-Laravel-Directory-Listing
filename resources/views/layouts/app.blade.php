@@ -24,6 +24,7 @@
 
     <!-- JavaScripts -->
     <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ asset('js/jquery-3.1.0.min.js') }}"><\/script>')</script>
     <script src="{{ asset('js/app.js') }}"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
