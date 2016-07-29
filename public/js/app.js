@@ -4741,8 +4741,34 @@ Item.prototype.setToAddView = function () {
 };
 
 Item.prototype.delete = function () {
-    $(this.$el).remove();
-    deleteItem(this);
+    this.sendDeleteRequest(function () {
+        deleteItem(this);
+        $(this.$el).remove();
+    }.bind(this));
+};
+
+Item.prototype.sendDeleteRequest = function (callback) {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    var itemId = this.$el.attr('data-id');
+
+    $.ajax({
+        type: 'DELETE',
+        url: '/item/' + itemId,
+        data: {
+            '_method': 'DELETE',
+            'id': itemId
+        },
+        dataType: 'json',
+        success: function success(data) {
+            callback.call();
+            console.log(data);
+        }
+    });
 };
 
 function init() {

@@ -18,6 +18,7 @@
                             <a href="{{ url('/category', $categoryItem->id) }}">
                                 <img src="{{ url($categoryItem->icon_url) }}" />
                             </a>
+                            <span class="nav__title">{{ $categoryItem->name }}</span>
                         </li>
                     @endif
                 @endforeach

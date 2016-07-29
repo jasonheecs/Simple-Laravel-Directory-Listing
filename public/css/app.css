@@ -126,7 +126,6 @@ label:focus {
 .input__field--textarea {
   height: 300px;
   border: 1px solid transparent;
-  overflow-y: scroll;
   resize: none; }
 
 .input__svg {
@@ -249,12 +248,15 @@ label:focus {
 .nav__item {
   display: inline-block;
   position: relative;
-  margin-right: 25px; }
-  @media (min-width: 992px) {
-    .nav__item {
-      margin-right: 35px; } }
+  text-align: center; }
+  .nav__item a {
+    display: block;
+    margin: 0 14px; }
+    @media (min-width: 992px) {
+      .nav__item a {
+        margin: 0 20px; } }
   .nav__item:last-child {
-    margin-right: 0; }
+    padding-right: 0; }
   .nav__item::before {
     position: absolute;
     top: 0;
@@ -264,6 +266,20 @@ label:focus {
     content: '';
     pointer-events: none;
     mix-blend-mode: color; }
+  .nav__item:hover .nav__title, .nav__item:focus .nav__title {
+    transform: translate3d(-50%, 3px, 0);
+    opacity: 1; }
+
+.nav__title {
+  font-size: 14px;
+  font-size: 0.875rem;
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translate3d(-50%, -5px, 0);
+  transition: opacity .25s, transform .35s;
+  color: #ebebeb;
+  opacity: 0; }
 
 .page-title {
   position: absolute;

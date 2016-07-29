@@ -1,4 +1,4 @@
-<div class="grid-item">
+<div class="grid-item" @if (!isset($jsTemplate))data-id="{{ $item->id }}" @endif>
     <ul class="grid-item__btns">
         <li class="grid-item__btn grid-item__btn--edit">
             <a href="#" class="js-edit-item" title="Edit this item">

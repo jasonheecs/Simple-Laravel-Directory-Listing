@@ -5,14 +5,19 @@
 .nav__item {
   display: inline-block;
   position: relative;
-  margin-right: 25px;
+  text-align: center;
 
-  @include respond-to('large') {
-    margin-right: 35px;
+  a {
+    display: block;
+    margin: 0 14px;
+
+    @include respond-to('large') {
+      margin: 0 20px;
+    }
   }
 
   &:last-child {
-    margin-right: 0;
+    padding-right: 0;
   }
 
   &::before {
@@ -25,4 +30,23 @@
     pointer-events: none;
     mix-blend-mode: color;
   }
+
+  &:hover,
+  &:focus {
+    .nav__title {
+      transform: translate3d(-50%, 3px, 0);
+      opacity: 1;
+    }
+  }
+}
+
+.nav__title {
+  @include font-size(14px);
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translate3d(-50%, -5px, 0);
+  transition: opacity .25s, transform .35s;
+  color: shade($color-white, 8%);
+  opacity: 0;
 }
