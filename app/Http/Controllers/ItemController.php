@@ -31,7 +31,8 @@ class ItemController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'url' => 'required|url',
-            'description' => 'required'
+            'description' => 'required',
+            'categoryId' => 'required'
         ]);
 
         $item = new Item();
