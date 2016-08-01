@@ -43,6 +43,8 @@ class CategoryController extends Controller
             $query->orderBy('order', 'asc');
         }]);
 
-        return view('category.show');
+        return view('category.show', [
+            'category' => $category
+        ]);
     }
 }

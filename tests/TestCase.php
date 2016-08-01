@@ -90,4 +90,16 @@ abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
     {
       $this->assertArrayHasKey($view, $this->nestedViewsData);
     }
+
+    /**
+     * Get response data array from view data
+     * @param  Illuminate\Http\Response $response
+     * @param  string $key
+     * @return array
+     */
+    protected function getResponseData($response, $key){
+        $content = $response->getOriginalContent();
+        $content = $content->getData();
+        return $content[$key]->all();
+    }
 }

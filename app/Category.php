@@ -14,6 +14,31 @@ class Category extends Model
         return $this->hasMany('App\Item');
     }
 
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    /**
+     * Create a Category slug.
+     *
+     * @param  string $name
+     * @return string
+     */
+    public function makeSlugFromName($name)
+    {
+        $slug = str_slug($name);
+
+        $count = Category::whereRaw("slug RLIKE '^{$slug}(-[0-9]+)?$'")->count();
+
+        return $count ? "{$slug}-{$count}" : $slug;
+    }
+
     public function addItem(Item $item)
     {
         return $this->items()->save($item);

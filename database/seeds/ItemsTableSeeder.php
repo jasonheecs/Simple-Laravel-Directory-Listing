@@ -22,10 +22,10 @@ class ItemsTableSeeder extends Seeder
             ->create()
             ->each(function($category, $key) {
                 $category->name = $this->categories[$key];
-                $category->slug = convertToSlug($this->categories[$key]);
+                $category->slug = str_slug($this->categories[$key]);
                 $category->save();
                 $category->items()->saveMany(
-                    factory(Item::class, 12)
+                    factory(Item::class, rand(10, 16))
                     ->make()
                     ->each(function($item, $order) {
                         $item->order = $order + 1;
