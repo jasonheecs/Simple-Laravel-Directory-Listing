@@ -25,12 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //@TODO: Display error page if there are no categories
-        $category = Category::first();
-        $category->load('items');
-
-        return view('category.show', [
-            'category' => $category
-        ]);
+        if (Category::count()) {
+            return view('category.show');
+        } else {
+            abort(403, 'No categories found');
+        }
     }
 }

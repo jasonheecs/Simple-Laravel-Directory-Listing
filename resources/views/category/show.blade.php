@@ -12,7 +12,7 @@
 
         <nav class="navbar">
             <ul class="nav">
-                @foreach (App\Category::all() as $categoryItem)
+                @foreach ($categories as $categoryItem)
                     @if ($categoryItem->id != $category->id)
                         <li class="nav__item">
                             <a href="{{ url('/category', $categoryItem->id) }}">
@@ -30,9 +30,9 @@
         @foreach ($category->items as $item)
            @include('item.show')
         @endforeach
-            <div id="add-grid-item" class="grid-item grid-item--add">
-                @include('item.add')
-            </div>
+        <div id="add-grid-item" class="grid-item grid-item--add">
+            @include('item.add')
+        </div>
     </main>
 
     @include('item.create')

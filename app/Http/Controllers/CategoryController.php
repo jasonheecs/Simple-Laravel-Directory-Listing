@@ -39,10 +39,10 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        $category->load('items');
+        $category->load(['items' => function($query) {
+            $query->orderBy('order', 'asc');
+        }]);
 
-        return view('category.show', [
-            'category' => $category
-        ]);
+        return view('category.show');
     }
 }
