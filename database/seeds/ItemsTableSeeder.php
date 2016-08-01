@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Category;
+use App\Item;
 
 class ItemsTableSeeder extends Seeder
 {
+    private $categories = ['Wordpress', 'Prestashop', 'Joomla', 'Magento'];
+
     /**
      * Run the database seeds.
      *
@@ -11,11 +15,17 @@ class ItemsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Category::class, 4)
+        Item::truncate();
+        Category::truncate();
+
+        factory(Category::class, 4)
             ->create()
-            ->each(function($category) {
+            ->each(function($category, $key) {
+                $category->name = $this->categories[$key];
+                $category->slug = convertToSlug($this->categories[$key]);
+                $category->save();
                 $category->items()->saveMany(
-                    factory(App\Item::class, 12)
+                    factory(Item::class, 12)
                     ->make()
                     ->each(function($item, $order) {
                         $item->order = $order + 1;
